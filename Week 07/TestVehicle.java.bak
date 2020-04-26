@@ -1,0 +1,43 @@
+public class TestVehicle{
+	public static void main(String[] args){
+		System.out.println("Creating a motorcycle");
+		Vehicle motorcycle = new Vehicle();
+		motorcycle.passenges = 2;
+		motorcycle.fuelCapacity = 5;
+		motorcycle.fuelEfficiency = 20;
+		showVehicle("Motorcycle", motorcycle);
+		
+		System.out.println("Creating a car");
+		Vehicle car = new Vehicle();
+		car.passenges = 4;
+		car.fuelCapacity = 15;
+		car.fuelEfficiency = 12;
+		showVehicle("Car", car);
+		
+		System.out.println("Creating a bus");
+		Vehicle bus = new Vehicle();
+		bus.passenges = 50;
+		bus.fuelCapacity = 40;
+		bus.fuelEfficiency = 5.5f;
+		showVehicle("Bus", bus);	
+	}
+	
+	static void showVehicle(String type, Vehicle v){
+		System.out.println("Vehicle Type:\t" + type);
+		System.out.println("Passengers:\t" + v.passenges);
+		System.out.println("Fuel Capacity:\t" + v.fuelCapacity + " L");
+		System.out.println("Fuel Efficiency:\t" + v.fuelEfficiency + " km/L");
+		v.showRange();
+		System.out.println();
+	}
+}
+
+class Vehicle{
+	int passenges;			//number of passenges
+	float fuelCapacity;		//fuel capacity in Liters
+	float fuelEfficiency;	//Kilometers per Liters
+	
+	void showRange(){
+		System.out.println("Has range of " + (fuelCapacity * fuelEfficiency)+ " kilometers");
+	}
+}
